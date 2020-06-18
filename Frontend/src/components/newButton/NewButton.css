@@ -1,0 +1,43 @@
+.NewButton{
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.NewButton:focus{
+    outline: none;
+}
+
+.NewButton--Large{
+    font-size: 3rem;
+    padding: 1.6rem 5rem;
+    border: 4px solid #FFFFFF;
+}
+
+.NewButton--Small{
+    border: 2.5px solid #FFFFFF;
+    padding: 0.8rem 2rem;
+    font-size: 2rem;
+}
+
+.NewButton--Dark{
+    background: #3F3F3F;
+    color: #FFFFFF;
+}
+
+.NewButton--Light{
+    background: #FFFFFF;
+    border: 2.5px solid #707070;
+    color: #3F3F3F;
+}
+
+.NewButton--White{
+    background: #fff;
+    color: #7070DC;
+}
+
+.NewButton--Transparent{
+    background-color: transparent;
+    color: #fff;
+}

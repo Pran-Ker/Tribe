@@ -1,0 +1,182 @@
+.UserInfo{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.UserInfo--Logo{
+    height: 10vh;
+    width: auto;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.UserInfo--Div1{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+
+.UserInfo--Div1Text{
+    font-size: 5rem;
+    color: #fff;
+    text-align: justify;
+    font-weight: 400;
+    margin-left: 5vw;
+    margin-right: 3vw;
+}
+
+.UserInfo--Back{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.UserInfo--Back:hover{
+    color: #6565FF;
+}
+
+.UserInfo--Div2{
+    height: 100%;
+    width: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.UserInfo--Div2Container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 30vw;
+}
+
+.UserInfo--Div2Heading{
+    font-size: 4.5rem;
+    font-weight: 400;
+}
+
+.UserInfo--Div2Para{
+    font-size: 2rem;
+    margin-top: 2rem;
+    text-align: justify;
+    margin-bottom: 3rem;
+}
+
+.UserInfo--Div2PhotoUpload{
+    position: relative;
+    height: 12rem;
+    width: 13rem;
+    margin-bottom: 2.5rem;
+    color: #fff;
+}
+
+.UserInfo--Div2PhotoUpload:focus{
+    outline: none;
+}
+
+.UserInfo--Div2PhotoUpload::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+
+.UserInfo--Div2PhotoUpload::before {
+    margin-bottom: 2.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: 'Upload';
+    height: 12rem;
+    width: 12rem;
+    background-color: #46aaa4;
+    border: 1px solid #46aaa4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 400;
+    font-size: 2rem;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+  }
+
+
+
+.UserInfo--NextInfo{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    color: #000;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer; 
+    font-family: 'Lato', sans-serif;
+}
+
+.UserInfo--NextInfo:hover{
+    color: #6565FF;
+}
+
+.UserInfo--NextInfo:focus{
+    outline: none;
+}
+
+.UserInfo--BackInfo{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    color: #000;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer; 
+}
+
+.UserInfo--BackInfo:hover{
+    color: #a15de4;
+}
+
+.UserInfo--Div2SocialIcons{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 40%;
+    margin-bottom: 2.5vh;
+}
+
+.UserInfo--Div2SocialIcon{
+    height: 5vh;
+    padding-right: 1vw;
+}
+
+.UserInfo--Div2Select{
+    width: 50%;
+    font-size: 1.5rem;
+}
+
+.UserInfo--Div2SkillsTag{
+    margin-top: 5vh;
+    width: 80%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+

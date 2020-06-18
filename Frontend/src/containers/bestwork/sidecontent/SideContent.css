@@ -1,0 +1,18 @@
+.SideContent{
+    height: 100vh;
+    width: 50vw;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SideContent--Title{
+    font-size: 4.5rem;
+    color: #fff;
+    text-transform: capitalize;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    text-align: center;
+    font-weight: 500;
+}

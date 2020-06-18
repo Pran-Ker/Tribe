@@ -1,0 +1,14 @@
+.UploadBtn{
+    height: 14vh;
+    width: 7vw;
+    background-color: #BCBCBC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.UploadBtn--Plus{
+    height: 2vh;
+}

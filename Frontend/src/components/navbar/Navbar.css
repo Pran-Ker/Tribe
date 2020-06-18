@@ -1,0 +1,35 @@
+.Navbar{
+    height: 12vh;
+    width: 100vw;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1000;
+    font-family: 'Lato', sans-serif;
+
+}
+
+.Navbar--Logo{
+    height: 11vh;
+    width: auto;
+    margin-left: 5vw;
+}
+
+.Navbar--Links{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 4vw;
+}
+
+.Navbar--Link{
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+}

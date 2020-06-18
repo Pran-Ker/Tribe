@@ -1,0 +1,28 @@
+.BadgeCard{
+    height: 28%;
+    width: 100%;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.BadgeCard--Img{
+    width: 30%;
+    height: auto;
+}
+
+.BadgeCard--Lines{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.BadgeCard--Line{
+    height: 2.5vh;
+    background-color: #929292;
+    border-radius: 2rem;
+}

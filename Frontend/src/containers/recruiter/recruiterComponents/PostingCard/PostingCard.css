@@ -1,0 +1,52 @@
+.PostingCard{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+    margin-bottom: 2rem;
+}
+
+.PostingCard--Requirements{
+    display: flex;
+    flex-direction: column;
+}
+
+.PostingCard--Time{
+    display: flex;
+    flex-direction: column;
+}
+
+.PostingCard--Hired{
+    display: flex;
+    flex-direction: column;
+}
+
+.PostingCard--Title{
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+}
+
+.PostingCard--Subtitle{
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.PostingCard--Lang{
+    display: flex;
+    justify-content: space-around;
+}
+
+.PostingCard--Language{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding: 0.5rem 1rem;
+    border: 0.5px solid #000;
+    border-radius: 4rem;
+    color: #000;
+}

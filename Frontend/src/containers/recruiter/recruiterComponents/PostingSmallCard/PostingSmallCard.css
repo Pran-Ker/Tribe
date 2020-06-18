@@ -1,0 +1,16 @@
+.PostingSmallCard{
+    height: 6vh;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    margin-bottom: 2rem;
+}
+
+.PostingSmallCard--Title{
+    color: #7070DC;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2rem;
+}

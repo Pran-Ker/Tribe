@@ -1,0 +1,21 @@
+.Rec--HireCard{
+    height: 15vh;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #F8F8FD;
+    cursor: pointer;
+    color: #FFFFFF;
+
+}
+
+.Rec--HireCard:hover{
+    color: #6566FF;
+}
+
+.Rec--HireCardTitle{
+    font-weight: 300;
+    font-size: 2.2rem;
+    text-transform: capitalize;
+}

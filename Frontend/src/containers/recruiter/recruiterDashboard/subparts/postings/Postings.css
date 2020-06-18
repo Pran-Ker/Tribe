@@ -1,0 +1,23 @@
+.Rec--Postings{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Rec--PostingsContainer{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    align-items: center;
+}
+
+.Rec--PostingContainerTitle{
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 4rem;
+    font-weight: 700;
+    padding-bottom: 5vh;
+}

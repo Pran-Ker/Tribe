@@ -1,0 +1,39 @@
+.RepoCard{
+    height: 5vh;
+    /* width: 80%; */
+    border: 1px solid #000;
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-around;  */
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+}
+
+.RepoCard--Current{
+    border: 1px solid #6566FF;
+    background-color: #6566FF;
+    color: #fff;
+}
+
+.RepoCard--Title{
+    font-size: 2rem;
+    font-weight: 400;
+    /* padding-left: 2.5rem; */
+}
+
+/* .RepoCard--Description{
+    font-size: 1.7rem;
+    font-weight: 300;
+    padding-left: 2.5rem;
+}
+
+.RepoCard--Lang{
+    font-size: 1.6rem;
+    font-weight: 300;
+    padding-left: 2.5rem;
+} */

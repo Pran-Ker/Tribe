@@ -1,0 +1,203 @@
+.User{
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.User--Logo{
+    height: 10vh;
+    width: auto;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+.User--Changeform{
+    color: #6565FF;
+    font-size: 3rem;
+    font-weight: 400;  
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.User--Button{
+    text-decoration: none;
+    background-color: transparent;
+    padding: 1rem 5rem;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    border: 0.7px solid #fff;
+    border-radius: 4rem;
+    cursor: pointer;
+}
+
+.User--Button:hover{
+    background: transparent linear-gradient(271deg, #52618D 0%, #63437F 46%, #327A6E 100%) 0% 0% no-repeat padding-box;
+    border: none;
+}
+
+.User--Button:focus{
+    outline: none;
+}
+
+.User--Signup{
+    height: 75vh;
+    width: 30vw;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.User--SignupForm{
+    height: 45vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.User--Login{
+    height: 55vh;
+    width: 30vw;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.User--LoginForm{
+    height: 30vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.User--Title{
+    color: #fff;
+    font-size: 5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.User--Subtitle{
+    color: #fff;
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.User--ForgotPwd{
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.User--Company{
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+    margin-right: 5vw;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.User--ForgotPwd:hover, .User--Company:hover{
+    color: #6565FF;
+}
+
+.User--Terms{
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 300;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.User--ErrorMsg{
+    font-size: 1.8rem;
+    color: #6565FF;
+    font-weight: 500;
+}
+
+.User--LoginLinks{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media(max-width: 420px){
+    .User--Signup{
+        width: 100vw;
+    }
+
+    .User--Title{
+        font-size: 3rem;
+    }
+
+    .User--Changeform {
+        font-size: 2.5rem;
+    }
+
+    .User--Subtitle {
+        font-size: 2.5rem;
+    }
+
+    .User--SignupForm {
+        width: 80vw;
+    }
+
+    .User--ErrorMsg {
+        font-size: 1.7rem;
+    }
+
+    .User--Button {
+        padding: 0.7rem 3.5rem;
+        font-size: 1.7rem;
+    }
+
+}
+
+@media only screen and (device-width: 768px){
+
+    .User--Signup {
+        width: 80vw;
+    }
+
+    .User--SignupForm {
+        width: 60vw;
+    }
+
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2){
+    .User--Signup {
+        width: 80vw;
+    }
+
+    .User--SignupForm {
+        width: 60vw;
+    }
+
+    .User--Title{
+        font-size: 7rem;
+    }
+
+    .User--Changeform {
+        font-size: 4.5rem;
+    }
+    .User--Subtitle {
+        font-size: 4.5rem;
+    }
+
+}

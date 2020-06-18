@@ -1,0 +1,67 @@
+.LandingCard{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+    height: 25vh;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.LandingCard--Img{
+    height: 19vh;
+    width: auto;
+}
+
+.LandingCard--Title{
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+@media(max-width: 420px){
+    .LandingCard--Img{
+        height: 12vh;
+    }
+
+    .LandingCard--Title{
+        font-size: 1.8rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .LandingCard{
+        height: 17vh;
+        width: 80vw;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media only screen and (device-width: 768px){
+    .LandingCard {
+        height: 22vh;
+    }
+
+    .LandingCard--Img {
+        height: 13vh;
+    }
+
+    .LandingCard--Title {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2){
+    .LandingCard {
+        height: 22vh;
+    }
+
+    .LandingCard--Img {
+        height: 13vh;
+    }
+
+    .LandingCard--Title {
+        font-size: 2.8rem;
+        text-align: center;
+    }
+}

@@ -1,0 +1,65 @@
+.Skill{
+    height: 75vh;
+    width: 85vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Skill--Title{
+    font-size: 3.5rem;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.Skill--Cards{
+    display: flex;
+    justify-content: space-around;
+    width: 85%;
+}
+
+@media(max-width: 420px){
+    .Skill{
+        height: 50vh;
+        width: 100vw;
+    }
+    .Skill--Title{
+        font-size: 2.2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .Skill--Cards{
+        width: 100%;
+    }
+}
+
+@media (max-width: 320px){
+
+    .Skill--Title {
+        font-size: 1.8rem;
+    }
+}
+
+@media only screen and (device-width: 768px){
+
+    .Skill{
+        width: 100vw;
+        height: 60vh;
+    }
+}
+
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2){
+    .Skill{
+        width: 100vw;
+        height: 60vh;
+    }
+
+    .Skill--Title{
+        font-size: 4.5rem;
+    }
+}

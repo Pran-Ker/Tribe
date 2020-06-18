@@ -1,0 +1,85 @@
+.Choice{
+    background-color: #000;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+.Choice--Info{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Choice--InfoHeading{
+    font-size: 7rem;
+    text-transform: uppercase;
+}
+
+.Choice--Options{
+    height: 40vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.Choice--InfoTitle{
+    font-size: 4.5rem;
+    text-transform: uppercase;
+}
+
+.Choice--InfoOptions{
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Choice--InfoOptionsTitle{
+    font-size: 7rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.Choice--OptionLink{
+    height: 25vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.Choice--OptionLinkUrl{
+    text-decoration: none;
+    height: 6vh;
+    width: 70%;
+    background-color: #fff;
+    border-radius: 0.75rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 3.5rem;
+    color: #4C4C4C;
+    font-weight: 300;
+    text-align: center;
+}
+
+.Choice--OptionLinkUrl:focus{
+    outline: none;
+}
+
+.Choice--OptionLinkUrl::placeholder{
+    font-family: 'Lato', sans-serif;
+    font-size: 3.5rem;
+    color: #4C4C4C;
+    font-weight: 300;
+    text-transform: uppercase; 
+    text-align: center;
+}

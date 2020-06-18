@@ -1,0 +1,76 @@
+.UserModal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 101;
+    height: 56vh;
+    width: 30vw;
+    background-color: #000000;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.UserModal--Heading{
+    color: #7070DC;
+    font-size: 2.7rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.UserModal--Form{
+    height: 80%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.UserModal--Group{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.UserModal--Label{
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+}
+
+.UserModal--Input{
+    height: 3.6vh;
+    width: 100%;
+    border-radius: 4rem;
+    border: none;
+    padding-left: 1vw;
+    font-size: 1.7rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.UserModal--Input:focus{
+    outline: none;
+}
+
+.UserModal--Submit{
+    text-decoration: none;
+    background-color: #3F3F3F;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 1rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.7rem;
+    align-self: center;
+    cursor: pointer;
+}
