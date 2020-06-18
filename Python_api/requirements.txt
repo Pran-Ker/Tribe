@@ -1,0 +1,17 @@
+requests
+base64
+github
+urllib
+json
+pprint
+datetime
+sklearn
+numpy 
+matplotlib
+pickle
+random
+pandas
+flask
+pickle
+random
+flask_cors 
