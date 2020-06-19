@@ -1,6 +1,5 @@
 requests
 gunicorn
-base64
 github
 urllib
 json
