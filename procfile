@@ -1,1 +1,1 @@
-web: gunicorn Python_api.run_new --log-file -
+web gunicorn Python_api.run_new:app --log-file -
