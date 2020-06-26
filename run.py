@@ -178,7 +178,22 @@ def profile_level_2(num_languages,num_deploy):
 
 def find_languages(repo,user):   #calculating number of languages for best repo evaluation
     
-    languages = []
+
+    url = "https://api.github.com/repos/"+repo.full_name+"/languages"
+
+    response = urllib.request.urlopen(url)
+    webContent = response.read()
+    res_dict = json.loads(webContent.decode('utf-8')) 
+    for lang in res_dict:
+        if lang not in retld.keys():
+            retld[lang]=1
+
+        else:
+            retld[lang]+=1
+             return len(retld.keys())
+
+def lang_details(repo,user):   #calculating number of languages for best repo evaluation
+
       #removed forked repos
 
     url = "https://api.github.com/repos/"+repo.full_name+"/languages"
@@ -187,11 +202,12 @@ def find_languages(repo,user):   #calculating number of languages for best repo 
     webContent = response.read()
     res_dict = json.loads(webContent.decode('utf-8')) 
     for lang in res_dict:
-        if lang not in languages:
-            languages.append(lang)
-   
-    return len(languages)
-
+        if lang not in retld.keys():
+            retld[lang]=1
+        else:
+            retld[lang]+=1
+    # return languages
+        
 def deployment_counts(repo,user):   # Verifying status of deployments for best repo evaluation
     
     count = 0
@@ -230,6 +246,9 @@ def final_score(access_token,best_repos):
 
     data_forks = {}
     data_stars = {}
+    
+    global retld
+    retld={}
 
 
     sum_forks,sum_stars,sum_repos=0,0,0
@@ -270,6 +289,11 @@ def final_score(access_token,best_repos):
     finalretlist["Time"] = sum(data_dict.values())/sum_repos
     finalretlist["data_forks"] = data_forks
     finalretlist["data_stars"] = data_stars
+    finalretlist["lang_details"] = retld
+    
+    print(retld)
+    # langdet = requests.get("https://api.github.com/repos/dotnet/corefx/languages")
+    # print(langdet.status_code)
 
     
     
@@ -302,7 +326,7 @@ def prossesjson():
     return jsonify(finalscore)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
 
 """
 {
