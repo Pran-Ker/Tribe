@@ -178,26 +178,11 @@ def profile_level_2(num_languages,num_deploy):
 
 def find_languages(repo,user):   #calculating number of languages for best repo evaluation
     
-
-    url = "https://api.github.com/repos/"+repo.full_name+"/languages"
-
-    response = urllib.request.urlopen(url)
-    webContent = response.read()
-    res_dict = json.loads(webContent.decode('utf-8')) 
-    for lang in res_dict:
-        if lang not in retld.keys():
-            retld[lang]=1
-
-        else:
-            retld[lang]+=1
-             return len(retld.keys())
-
-def lang_details(repo,user):   #calculating number of languages for best repo evaluation
-
+    
       #removed forked repos
-
+    
     url = "https://api.github.com/repos/"+repo.full_name+"/languages"
-
+    
     response = urllib.request.urlopen(url)
     webContent = response.read()
     res_dict = json.loads(webContent.decode('utf-8')) 
@@ -206,8 +191,11 @@ def lang_details(repo,user):   #calculating number of languages for best repo ev
             retld[lang]=1
         else:
             retld[lang]+=1
-    # return languages
-        
+
+
+
+
+
 def deployment_counts(repo,user):   # Verifying status of deployments for best repo evaluation
     
     count = 0
@@ -222,6 +210,8 @@ def deployment_counts(repo,user):   # Verifying status of deployments for best r
             count+=1
             
     return count
+
+
 
 #g = Github(username,password)
 
@@ -241,38 +231,50 @@ def final_score(access_token,best_repos):
     url = f"https://api.github.com/users/{username}"
     user_data = requests.get(url).json()
 
-    finalretlist["followers"]=user_data['followers']
-    finalretlist["follwing"]=user_data['following']
 
-    data_forks = {}
-    data_stars = {}
-    
+    data_forks = 0
+    data_stars = 0
+
     global retld
     retld={}
 
-
+    langdetails={}
+    chrat_js={}
     sum_forks,sum_stars,sum_repos=0,0,0
     for repo in user.get_repos():
-        if repo.language!=None:  #removing forked repos
+        if repo.language!=None:
+            if str(username) in str(repo.full_name) :
+                chrat_js[repo.full_name]=repo.get_languages()
 
-            data_forks[repo.full_name[len(username)+1:]]=repo.forks #----for viz-----
-            data_stars[repo.full_name[len(username)+1:]]=repo.stargazers_count #----for viz-----
-
-
-
+            # if repo.language not in langdetails.keys():
+            #     langdetails[repo.language]=1
+            # else:
+            #     langdetails[repo.language]+=1
+            data_forks+=repo.forks 
+            data_stars+=repo.stargazers_count 
             sum_stars = sum_stars+repo.stargazers_count
             sum_forks = sum_forks+repo.forks
             sum_repos = sum_repos+1
-
+    for repo in chrat_js:
+        # print(repo)
+        for i in chrat_js[repo]:
+            # print("        ",i)
+            if i in langdetails.keys():
+                langdetails[i]+=1
+            else:
+                langdetails[i]=1
     #best_repos = ['Detection-of-Fraud-Transactions','image-processing']   # input of 5 best repos
     score2=0
+    dc=0
+    num_lang=0
     for best in best_repos:
         for repo in user.get_repos():
             if repo.full_name[len(username)+1:]==best and repo.language!=None:#CHECKING WHETHER THE REPO EXISTS OR NOT
-                score2 += profile_level_2(find_languages(repo,user),deployment_counts(repo,user))#SCORE2
+                dc+=deployment_counts(repo,user)
+                find_languages(repo,user)
             else:
                 pass
-    
+    score2 += profile_level_2(len(retld),dc)
     data_dict = {}
     for repo in user.get_repos():
         if repo.language!=None:
@@ -281,23 +283,48 @@ def final_score(access_token,best_repos):
             d0 = date(int(str(create)[0:4]),int(str(create)[5:7]),int(str(create)[8:11]))   #DATE OF FIRST PUSH
             d1 = date(int(str(last)[0:4]),int(str(last)[5:7]),int(str(last)[8:11]))
             days = (d1 - d0).days
-            data_dict[repo.full_name[len(username)+1:]] = days
-        #print(data_dict)-----------------------------------------------------------------------------------------
-        #print("Avg time spent on each project:",sum(data_dict.values())/sum_repos)--------------------------------------------------------------------------------------
+            data_dict[repo.full_name[len(username)+1:]] = days+1
+
+
+    commits_per_lang={}
+    commits_per_repo={}
+    commits_per_repo_num=0
+    for repo in user.get_repos():
+        if str(username) in str(repo.full_name) and repo.fork == False and repo.language:
+            commits_per_repo_num=0
+            for commit in repo.get_commits():
+                commits_per_repo_num+=1
+                # print(repo.full_name,"   ",commit.files)
+                for commitedfiles in commit.files:
+                    if "/" not in list(commitedfiles.filename):
+                        try:
+                            abc=(str(commitedfiles.filename).split(".")[1])
+                        except:
+                            abc=(str(commitedfiles.filename))
+                        if abc in commits_per_lang.keys() :
+                            commits_per_lang[abc]+=1
+                        else:
+                            commits_per_lang[abc]=1
+            commits_per_repo[repo.full_name]=commits_per_repo_num        
+
+
+
 
     finalretlist["data_dict"] = data_dict
     finalretlist["Time"] = sum(data_dict.values())/sum_repos
     finalretlist["data_forks"] = data_forks
     finalretlist["data_stars"] = data_stars
-    finalretlist["lang_details"] = retld
-    
-    print(retld)
-    # langdet = requests.get("https://api.github.com/repos/dotnet/corefx/languages")
-    # print(langdet.status_code)
+    finalretlist["lang_details_used_in_repos"] = langdetails
+    finalretlist["chrat_js"] = chrat_js
+    finalretlist["commits_per_lang"] = commits_per_lang
+    finalretlist["commits_per_repo"] = commits_per_repo
 
     
     
-    print(finalretlist)
+    # langdet = requests.get("https://api.github.com/repos/dotnet/corefx/languages")
+    # print(langdet.status_code)
+
+    # print(finalretlist)
 
     score1 = profile_level(sum_stars,sum_forks,sum_repos,tc)
 
@@ -333,5 +360,6 @@ if __name__ == "__main__":
 	"access_token" : "",
 	"best_repos" : ["",""]
 }
+
 
 """
