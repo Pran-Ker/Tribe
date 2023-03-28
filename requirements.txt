@@ -45,6 +45,6 @@ sklearn==0.0
 threadpoolctl==2.1.0
 urllib3==1.25.8
 webencodings==0.5.1
-Werkzeug==1.0.1
+Werkzeug==2.2.3
 wrapt==1.12.1
 zope.interface==5.1.0
